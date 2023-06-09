@@ -2,7 +2,7 @@ class Cat < ApplicationRecord
     include ActionView::Helpers::DateHelper
 
     validates :birthdate, :color, :name, :sex, presence:true
-    validates :color , inclusion: { in: ['Black', 'White', 'Orange', 'gray'] }
+    validates :color , inclusion: { in: ['Black', 'White', 'Orange', 'Gray'] }
     validates :sex , inclusion: { in: ["M", "F"]}
     validate :valide_birthday
 
