@@ -25,12 +25,13 @@ class CatsController < ApplicationController
     else
         render json: @cat.errors.full_messages, status: 422
     end
-end
+  end
 
   def edit
-    @cat = Cat.find_by(id: params[:id])
+    @cat = Cat.find(params[:id])
     render :edit
   end
+
 
 
   private
