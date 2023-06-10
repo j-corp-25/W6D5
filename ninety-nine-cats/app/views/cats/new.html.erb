@@ -2,43 +2,76 @@
 <p>Find me in app/views/cat/new.html.erb</p>
 
 <form action="<%= cats_url %>" method="post">
+<%# 
+ <input type="hidden" name="_method" value="patch"> %>
+
     <label for="name"> name:
     </label>
+
     <input id="name" type="text" name="cat[name]">
 
     <br />
-    <label for="selection" id="selection">
-       <select id="selection" name="cat[color]" >
-            <option value="<% 'Black' %>">Black</option>
-            <option value="<% 'White' %>">White</option>
-            <option value="<% 'Orange' %>">Orange</option>
-            <option value="<% 'Gray' %>">Gray</option>
-        </select>
-    </label>
-
     <br />
 
+    <label for="color"> Color:
+    </label>
 
-    <label for="sex" id="selection">
-    <select id="selection" name="cat[sex]" >
-        <option value="<% 'M' %>">Male</option>
-        <option value="<% 'F' %>">Female</option>
+    <select id="color" name="cat[color]" >
+        <option value="" selected disabled hidden>Choose Color</option>
+        <option value="<% 'Black' %>"> Black</option>
+        <option value="<% 'White' %>"> White</option>
+        <option value="<% 'Orange' %>"> Orange</option>
+        <option value="<% 'Gray' %>"> Gray</option>
     </select>
+
+    <br>
+    <br>
+
+    <label> Male
+    <input id="sex" type="radio" name="cat[sex]" value="<% 'M' %>" >
     </label>
 
-    <label for="age" id="age">
-        <input  type="text"id="age" name="cat[age]">
+    <label> Female
+    <input type="radio" name="cat[sex]" value="<% 'F' %>" >
     </label>
 
-    <label for="description" >
-        <input  type="text" name="cat[description]">
+    <br>
+    <br>
+
+    <label for="birthday"> Birthday:
     </label>
 
+    <input type="date" id="birthday" name="cat[birthday]">
+    <br>
+
+    <br>
+
+    <label for="descript"> Description:
+    </label>
+    <br>
+
+    <textarea  name="cat[descreiption]" rows="6" cols="25"   >
+    </textarea>
+
+
+
+
+
+
+
+    <%# <label for="sex" id="selection">
+    <select id="selection" name="cat[sex]" >
+        <option value="'M'#">Male</option>
+        <option value="<% 'F'">Female</option>
+    </select> %>
+    <%# </label> %>
 
 
 
 
 
     <br />
-    <input type="submit" value="Create User">
+    <br />
+
+    <input type="submit" value="Create cat">
 </form>

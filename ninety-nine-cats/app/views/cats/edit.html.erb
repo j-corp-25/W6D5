@@ -1,20 +1,54 @@
-<h1>Cat#edit</h1>
-<p>Find me in app/views/cat/edit.html.erb</p>
+<h1>Cat#new</h1>
+<p>Find me in app/views/cat/new.html.erb</p>
 
+<form action="<%= cats_url %>" method="post">
 
-<form action="<%= user_url(@user.id) %>" method="post">
-    <input type="hidden" name="_method" value="patch">
-    <label for="username"> Username:
+ <input type="hidden" name="_method" value="patch">
+
+    <label for="name"> name:
     </label>
-    <input id="username" type="text" name="user[username]" value="<%= @user.username %>">
+
+    <input id="name" type="text" name="cat[name]">
+
     <br />
-    <label> Email:
-        <input type="text" name="user[email]" value="<%= @user.email %>">
+    <br />
+
+    <label for="color"> Color:
     </label>
-    <br />
-    <label> Age:
-        <input type="text" name="user[age]" value="<%= @user.age %>">
+
+    <select id="color" name="cat[color]" >
+        <option value="" selected disabled hidden>Choose Color</option>
+        <option value="<% 'Black' %>"> Black</option>
+        <option value="<% 'White' %>"> White</option>
+        <option value="<% 'Orange' %>"> Orange</option>
+        <option value="<% 'Gray' %>"> Gray</option>
+    </select>
+
+    <br>
+    <br>
+
+    <label> Male
+    <input id="sex" type="radio" name="cat[sex]" value="<% 'M' %>" >
     </label>
-    <br />
-    <input type="submit" value="Edit User">
-</form>
+
+    <label> Female
+    <input type="radio" name="cat[sex]" value="<% 'F' %>" >
+    </label>
+
+    <br>
+    <br>
+
+    <label for="birthday"> Birthday:
+    </label>
+
+    <input type="date" id="birthday" name="cat[birthday]">
+    <br>
+
+    <br>
+
+    <label for="descript"> Description:
+    </label>
+    <br>
+
+    <textarea  name="cat[descreiption]" rows="6" cols="25"   >
+    </textarea>

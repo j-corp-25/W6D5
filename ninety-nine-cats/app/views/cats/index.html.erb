@@ -1,8 +1,10 @@
-<h1> These are all of our users </h1>
+<h1> These are all of our cats </h1>
+
 <ul>
-    <% @cats.each do |cat| %>
+    <% @cats.each do |loop_cat| %>
         <li>
-            <%= render 'cat', cat: cat, action: :index %>
+            <%= render 'cat', cat: loop_cat, action: :index %>
         </li>
     <% end %>
+
 </ul>
