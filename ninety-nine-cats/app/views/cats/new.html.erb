@@ -1,61 +1,4 @@
-<h1>Cat#new</h1>
-<p>Find me in app/views/cat/new.html.erb</p>
-
-<form action="<%= cats_url %>" method="post">
-<%#
- <input type="hidden" name="_method" value="patch"> %>
-
-    <label for="name"> name:
-    </label>
-
-    <input id="name" type="text" name="cat[name]">
-
-    <br />
-    <br />
-
-    <label for="color"> Color:
-    </label>
-
-    <select id="color" name="cat[color]" >
-        <option value="" selected disabled hidden>Choose Color</option>
-        <option value="<% 'Black' %>"> Black</option>
-        <option value="<% 'White' %>"> White</option>
-        <option value="<% 'Orange' %>"> Orange</option>
-        <option value="<% 'Gray' %>"> Gray</option>
-    </select>
-
-    <br>
-    <br>
-
-    <label> Male
-    <input id="sex" type="radio" name="cat[sex]" value="<% 'M' %>" >
-    </label>
-
-    <label> Female
-    <input type="radio" name="cat[sex]" value="<% 'F' %>" >
-    </label>
-
-    <br>
-    <br>
-
-    <label for="birthdate"> birthdate:
-    </label>
-
-    <input type="date" id="birthdate" name="cat[birthdate]">
-    <br>
-
-    <br>
-
-    <label for="descript"> Description:
-    </label>
-    <br>
-
-    <textarea  name="cat[descreiption]" rows="6" cols="25"   >
-    </textarea>
-
-
-
-
+<%= render 'form', cat: @cat %>
 
 
 
@@ -69,9 +12,3 @@
 
 
 
-
-    <br />
-    <br />
-
-    <input type="submit" value="Create cat">
-</form>

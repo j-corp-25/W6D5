@@ -1,1 +1,58 @@
-<%= render 'form', cat: @cat %>
+
+
+<form action="<%= cat_url(cat.id)%>"  method="post">
+
+ <input type="hidden" name="_method" value="patch">
+
+    <label for="name"> name:
+    </label>
+
+    <input id="name" type="text" name="cat[name]"
+    value="<%=cat.name%>">
+
+    <br />
+    <br />
+
+    <label for="color"> Color:
+    </label>
+
+    <select id="color" name="cat[color]"  >
+        <option selected > <%=cat.color%> </option>
+        <option value="<%=cat.color%>" > Black</option>
+        <option value="<%=cat.color%>" > White</option>
+        <option value="<%=cat.color%>" > Orange</option>
+        <option value="<%=cat.color%>" > Gray</option>
+    </select>
+
+    <br>
+    <br>
+    <label for="male_Sex_option"> Male </label>
+    <input type="radio" name="cat[sex]" value="M" id="male_Sex_option" <% if cat.sex == "M" %>checked<% end %> >
+
+    <br>
+    <label for="female_Sex_option"> Female </label>
+    <input type="radio" name="cat[sex]" value="F" id="female_Sex_option"  <% if cat.sex == "F" %>checked<% end %> >
+
+
+
+
+    <br>
+    <br>
+
+    <label for="birthdate"> birthdate:
+    </label>
+
+    <input type="date" id="birthdate" name="cat[birthdate]" value="<%=cat.birthdate%>">
+    <br>
+
+    <br>
+
+    <label for="descript"> Description:
+    </label>
+    <br>
+
+    <textarea  name="cat[description]" rows="6" cols="25" > <%=cat.description%>"
+    </textarea>
+
+
+</form>
